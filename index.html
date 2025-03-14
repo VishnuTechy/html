@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World Design</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Nunito", sans-serif;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #ffffff;
+        padding: 20px;
+        min-height: 100vh;
+      }
+
+      /* Header (Placed at the Top) */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px 50px;
+        position: fixed;
+        top: 0;
+        background: white;
+        z-index: 1000;
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #333;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+
+      nav ul li {
+        cursor: pointer;
+        font-weight: 500;
+        color: #333;
+      }
+
+      /* Main Section */
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-inline: 50px;
+        margin-top: 70px; /* To prevent overlap with fixed header */
+        flex-grow: 1;
+      }
+      .image-grid-container {
+        position: relative;
+        width: 100%;
+        max-width: 40vw;
+        height: 80%;
+        padding: 20px;
+        background: url("./Mask\ group\ \(1\).png"); /* Custom Background */
+      }
+
+      /* Content Section */
+      .content {
+        flex: 1;
+        padding: 20px;
+        min-width: 300px;
+        max-width: 40vw;
+        height: 80%;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        font-weight: 900;
+        color: #000;
+        margin-bottom: 20px;
+        line-height: 1.1;
+        letter-spacing: -1px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      /* Icon Styling */
+      .icon-circle {
+        width: 6rem; /* Using rem for better scalability */
+        height: 3rem;
+        background-color: #ff7f50;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .icon-circle img {
+        width: 60%; /* Adjusting dynamically */
+        height: auto;
+        max-width: 24px; /* Prevents over-scaling */
+      }
+
+      .icon-circle img {
+        width: 20px;
+        height: 20px;
+      }
+
+      p {
+        font-size: 1rem;
+        font-weight: 400;
+        color: #333;
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+
+      /* Students & Avatars */
+      .students {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-block: 30px;
+      }
+
+      .avatars {
+        display: flex;
+        gap: 5px;
+      }
+
+      .avatars img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid white;
+      }
+
+      /* Buttons */
+      .buttons {
+        margin-top: 30px;
+        display: flex;
+        gap: 15px;
+      }
+
+      .btn-green,
+      .btn-orange {
+        padding: 15px 30px;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        font-size: 20px;
+        min-width: 180px;
+        font-weight: 600;
+        border-radius: 50px;
+        color: white;
+      }
+
+      .btn-green {
+        background: #2f584e;
+      }
+
+      .btn-orange {
+        background: #ffa500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+      }
+
+      .btn-green:hover {
+        background: #006400;
+      }
+
+      .btn-orange:hover {
+        background: #ff8c00;
+      }
+
+      /* Image Grid (2 images per row) */
+      .image-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 500px;
+        margin-top: 20px;
+      }
+
+      .image-grid img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Footer */
+      footer {
+        background: #ff9966;
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+        color: white;
+        margin-top: auto;
+      }
+
+      .stats {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+      }
+
+      .stats div {
+        font-size: 1.8rem;
+        font-weight: 700;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .stats div span {
+        font-size: 1rem;
+        font-weight: 400;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        nav ul {
+          justify-content: center;
+          padding-top: 10px;
+        }
+
+        main {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .students {
+          align-items: center;
+        }
+
+        .buttons {
+          justify-content: center;
+        }
+
+        footer {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .image-grid {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+      .vertical-line {
+        width: 2px; /* Adjust thickness */
+        background-color: white; /* White color */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="./Logo.png" style="height: 80px; width: 80px" /> Hello World!
+      </div>
+      <nav>
+        <ul>
+          <li>Course</li>
+          <li>Info</li>
+          <li>Testimonial</li>
+          <li>Categories</li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Content Section -->
+      <section class="content">
+        <h1>
+          LEARN GRAPHICS DESIGN FOR LIFE
+          <span class="icon-circle">
+            <img src="Icon.png" alt="Star" />
+          </span>
+        </h1>
+
+        <p>
+          Stay Informed, Stay Ahead: Unveiling the Future of Technology,
+          Gadgets, and Innovation
+        </p>
+        <p>
+          Your Gateway to the Digital Universe - Where Innovation Meets Insight
+        </p>
+
+        <div class="students">
+          <p style="font-size: 30px">5.1K Students All Over World</p>
+          <div class="avatars">
+            <img src="1.png" alt="Student" />
+            <img src="2.png" alt="Student" />
+            <img src="3.png" alt="Student" />
+          </div>
+        </div>
+
+        <div class="buttons">
+          <button class="btn-green">Book Your Seat</button>
+          <img src="./CTA.png" />
+        </div>
+      </section>
+
+      <!-- Image Grid -->
+      <section class="image-grid-container">
+        <div class="image-grid">
+          <img src="1.png" alt="Student 1" />
+          <img src="2.png" alt="Student 2" />
+          <img src="3.png" alt="Student 3" />
+          <img src="4.png" alt="Student 4" />
+          <img src="5.png" alt="Student 5" />
+          <img src="6.png" alt="Student 6" />
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="stats">
+        <div class="vertical-line"></div>
+        <div>6409 <span>Success Story</span></div>
+        <div class="vertical-line"></div>
+        <div>124 <span>Expert Instructor</span></div>
+        <div class="vertical-line"></div>
+        <div>54.749 <span>Hours Tutored</span></div>
+      </div>
+    </footer>
+  </body>
+</html>
